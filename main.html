@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/bootstrap/bootstrap.css">
+    <script defer src="script/manta_xml.umd.js"></script>    
+    <script defer src="script/bootstrapJS/bootstrap.bundle.js"></script>
+    <script defer src="script/js.js"></script>
+    <title>Converter</title>
+</head>
+<body>
+    <main>
+        <div class="mainCon container col-6 bg-light border-success rounded mt-3">
+            <ul class="nav nav-tabs pt-3 mb-5 text-dark">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#">Конвертировать из XML</a>
+                  </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="dataInput.html">Конвертировать из данных</a>
+              </ul>
+            <div class="field d-flex flex-column">
+                <div class="divXMLInput d-flex flex-column">
+                    <h3 class="XMLh3 p-2">XML:</h3>
+                    <textarea id="inputXML" class="shadow-sm form-control p-5 rounded" rows="5"></textarea>
+                </div>
+                    <button id="convert" class="shadow-sm m-5 p-2 col-3 align-self-center btn btn-primary btn-lg" type="button">Конвертировать</button>
+                </div>
+                <div class="divJSON d-flex flex-column mb-3">
+                    <h3 class="JSONh3 p-2">JSON:</h3>
+                    <textarea id="json" class="shadow-sm form-control p-5 rounded" rows="5" readonly></textarea>
+                    <button id="copyResult" onclick="copyResult()" class="shadow-sm m-3 p-2 col-4 align-self-center btn btn-primary btn-lg" type="button">Копировать результат</button>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
