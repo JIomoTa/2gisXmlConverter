@@ -1,5 +1,4 @@
-
-//transform.js
+// transform.js
 function transform(xml) {
   let result = mantaXML.xml2JSON(xml);
   let lngLat = [result.building._attrs.lon, result.building._attrs.lat];
@@ -19,7 +18,7 @@ function transform(xml) {
   };
 }
 
-//ui.js
+// ui.js
 let button = document.getElementById('convert');
 button.addEventListener('click', function () {
   let xml = document.getElementById('inputXML').value;
@@ -34,7 +33,7 @@ function copyResult() {
   alert("Результат сохранен в буфер обмена");
 };
 
-//math.js
+// math.js
 function distance(p1, p2){
   let distance = Math.sqrt((p2[0] - p1[0]) ** 2 + (p2[1] - p1[1]) ** 2);
   return distance;
@@ -68,7 +67,7 @@ function mapPointFromLngLat(lngLat) {
 
 
 
-//test.js
+// test.js
 function unitTest(){
   let input = `<building lat="56.134743473834099" lon="47.245286302641034" direction_lat="56.13474113846106" direction_lon="47.245301809161901">
               <part id="70030076555823021" model="zgktechnology1.glb" />
