@@ -1,11 +1,10 @@
-let imported_transform = require('./transform.js');
+let transform = require('./transform.js');
 let test = require('./test.js');
-
 
 let button = document.getElementById('convert');
 button.addEventListener('click', function () {
     let xml = document.getElementById('inputXML').value;
-    let jsonObj = imported_transform.transform(xml);
+    let jsonObj = transform.transform(xml);
     document.getElementById('json').value = JSON.stringify(jsonObj, null, 2);  
 });
 
