@@ -1,26 +1,52 @@
 let transform = require('./transform.js');
 
 function unitTest(){
-  let input = `<building lat="56.134743473834099" lon="47.245286302641034" direction_lat="56.13474113846106" direction_lon="47.245301809161901">
-              <part id="70030076555823021" model="zgktechnology1.glb" />
-            </building>`;
-  let etalon = `{
-  "coordinates": [
-    47.245286302641034,
-    56.1347434738341
-  ],
-  "rotateY": -15.124007273903898,
-  "scale": 191.63767893626522,
-  "modelURL": "zgktechnology1.glb"
-}`;
+  let input = `    <?xml version="1.0" encoding="UTF-8"?>
+  <buildings>
+      <building lat="56.134743473834099" lon="47.245286302641034" direction_lat="56.13474113846106" direction_lon="47.245301809161901">
+        <part id="70030076555821177" model="zgktechnology1.glb" />    
+        <part id="70030076555823021" model="zgktechnology2.glb" />
+        <part id="70030076561388553" model="zgktechnology_construction.glb" />
+      </building>
+  </buildings>`;
+  let etalon = [{
+    "coordinates": [
+      47.245286302641034,
+      56.1347434738341
+    ],
+    "rotateX": 90,
+    "rotateY": -15.124007273903898,
+    "scale": 191.63767893626522,
+    "modelId": "70030076555821177", 
+    "modelUrl": "zgktechnology1.glb"
+  }, {
+    "coordinates": [
+      47.245286302641034,
+      56.1347434738341
+    ],
+    "rotateX": 90,
+    "rotateY": -15.124007273903898,
+    "scale": 191.63767893626522,
+    "modelId": "70030076555823021", 
+    "modelUrl": "zgktechnology2.glb"
+  }, {
+    "coordinates": [
+      47.245286302641034,
+      56.1347434738341
+    ],
+    "rotateX": 90,
+    "rotateY": -15.124007273903898,
+    "scale": 191.63767893626522,
+    "modelId": "70030076561388553", 
+    "modelUrl": "zgktechnology_construction.glb"
+  }];
 
   let jsonObj = transform.transform(input);
 
-  if (etalon !== JSON.stringify(jsonObj, null, 2)) {
-    console.error("Тест не пройден!");
-    console.log(JSON.stringify(jsonObj, null, 2))
-  } else {
+  if (JSON.stringify(etalon) === JSON.stringify(jsonObj)) {
     console.log('Тест пройден!')
+  } else {
+    console.error("Тест не пройден!");
   };
 }
 
