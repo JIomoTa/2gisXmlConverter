@@ -1,6 +1,6 @@
-import { transform } from './transform.js';
+import { transformFromFields, transformFromXml } from './transform.js';
 
-function unitTest(){
+function unitTestXml(){
   let input = `    <?xml version="1.0" encoding="UTF-8"?>
   <buildings>
       <building lat="56.134743473834099" lon="47.245286302641034" direction_lat="56.13474113846106" direction_lon="47.245301809161901">
@@ -41,13 +41,39 @@ function unitTest(){
     "modelUrl": "zgktechnology_construction.glb"
   }];
 
-  let jsonObj = transform(input);
-
+  let jsonObj = transformFromXml(input);
+  
   if (JSON.stringify(etalon) === JSON.stringify(jsonObj)) {
-    console.log('Тест пройден!')
+    console.log('unitTestXml пройден!');
   } else {
-    console.error("Тест не пройден!");
+    console.error("unitTestXml не пройден!");
   };
 }
 
-export { unitTest };
+function unitTestFields(){
+  let input = {
+    lat: "56.134743473834099",
+    lon: "47.245286302641034",
+    direction_lon: "47.245301809161901",
+    direction_lat: "56.13474113846106"
+  }
+  let etalon = {
+    "coordinates": [
+      47.245286302641034,
+      56.1347434738341
+    ],
+    "rotateX": 90,
+    "rotateY": -15.124007273903898,
+    "scale": 191.63767893626522
+  };
+
+  let jsonObj = transformFromFields(input);
+
+  if (JSON.stringify(etalon) === JSON.stringify(jsonObj)) {
+    console.log('unitTestFields пройден!')
+  } else {
+    console.error("unitTestFields не пройден!");
+  };
+}
+
+export { unitTestXml, unitTestFields };

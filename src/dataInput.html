@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style/bootstrap/bootstrap.css">
+    <link rel="stylesheet" href="../style/bootstrap/bootstrap.css">
+    <script defer src="../dist/bundle.js"></script>  
     <title>Converter</title>
 </head>
 <body>
@@ -12,7 +13,7 @@
         <div class="mainCon container col-6 bg-light border-success rounded mt-3">
             <ul class="nav nav-tabs pt-3 mb-5 text-dark">
                 <li class="nav-item">
-                    <a class="nav-link" href="main.html">Конвертировать из XML</a>
+                    <a class="nav-link" href="index.html">Конвертировать из XML</a>
                   </li>
                 <li class="nav-item">
                   <a class="nav-link active" href="#">Конвертировать из данных</a>
@@ -23,29 +24,21 @@
                     <div class="row flex-column">
                         <div class="d-flex flex-row mb-2">
                             <div class="col-auto me-4">
-                                <label for="inputLon" class="user-select-none col-form-label">Lon:</label>
-                            </div>
-                            <div class="col-auto ms-1">
-                                <textarea id="inputLon" class="shadow-sm ms-5 form-control col-sm-2 px-4" rows="1"></textarea>
-                            </div>
-                        </div>
-                        <div class="d-flex flex-row mb-2">
-                            <div class="col-auto me-4">
                                 <label for="inputLat" class="user-select-none col-sm-2 col-form-label">Lat:</label>
                             </div>
                             <div class="col-auto ms-2">
                                 <textarea id="inputLat" class="shadow-sm ms-5 form-control col-sm-2 px-4" rows="1"></textarea>
                             </div>
                         </div>
-                        <div class="d-flex flex-row mb-2">    
-                            <div class="col-auto">
-                                <label for="inputDirLon" class="user-select-none col-form-label">Direction_Lon:</label>
+                        <div class="d-flex flex-row mb-2">
+                            <div class="col-auto me-4">
+                                <label for="inputLon" class="user-select-none col-form-label">Lon:</label>
                             </div>
                             <div class="col-auto ms-1">
-                                <textarea id="inputDirLon" class="shadow-sm form-control col-sm-2 px-5" rows="1"></textarea>
+                                <textarea id="inputLon" class="shadow-sm ms-5 form-control col-sm-2 px-4" rows="1"></textarea>
                             </div>
                         </div>
-                        <div class="d-flex flex-row mb-2">
+                        <div class="d-flex flex-row mb-2">    
                             <div class="col-auto">
                                 <label for="inputDirLat" class="user-select-none col-form-label">Direction_Lat:</label>
                             </div>
@@ -53,14 +46,22 @@
                                 <textarea id="inputDirLat" class="shadow-sm form-control col-sm-2 px-5" rows="1"></textarea>
                             </div>
                         </div>
+                        <div class="d-flex flex-row mb-2">
+                            <div class="col-auto">
+                                <label for="inputDirLon" class="user-select-none col-form-label">Direction_Lon:</label>
+                            </div>
+                            <div class="col-auto ms-1">
+                                <textarea id="inputDirLon" class="shadow-sm form-control col-sm-2 px-5" rows="1"></textarea>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                    <button id="convert" class="m-5 p-2 col-3 align-self-center btn btn-primary btn-lg" type="button">Конвертировать</button>
+                    <button id="convertData" class="m-5 p-2 col-3 align-self-center btn btn-primary btn-lg" type="button">Конвертировать</button>
                 </div>
                 <div class="divJSON d-flex flex-column mb-3">
                     <h3 class="JSONh3 p-2">JSON:</h3>
                     <textarea id="json" class="shadow-sm form-control p-5 rounded" rows="5" readonly></textarea>
-                    <button id="copyResult" onclick="copyResult()" class="m-3 p-2 col-4 align-self-center btn btn-primary btn-lg" type="button">Копировать результат</button>
+                    <button id="copyResult" class="m-3 p-2 col-4 align-self-center btn btn-primary btn-lg" type="button">Копировать результат</button>
                 </div>
             </div>
         </div>
