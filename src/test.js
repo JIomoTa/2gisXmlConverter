@@ -1,4 +1,4 @@
-let transform = require('./transform.js');
+import { transform } from './transform.js';
 
 function unitTest(){
   let input = `    <?xml version="1.0" encoding="UTF-8"?>
@@ -41,7 +41,7 @@ function unitTest(){
     "modelUrl": "zgktechnology_construction.glb"
   }];
 
-  let jsonObj = transform.transform(input);
+  let jsonObj = transform(input);
 
   if (JSON.stringify(etalon) === JSON.stringify(jsonObj)) {
     console.log('Тест пройден!')
@@ -50,6 +50,4 @@ function unitTest(){
   };
 }
 
-module.exports = {
-  unitTest: unitTest
-};
+export { unitTest };

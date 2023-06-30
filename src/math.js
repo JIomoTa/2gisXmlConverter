@@ -29,10 +29,12 @@ function mapPointFromLngLat(lngLat) {
   return [clamp(x, -worldHalf, worldHalf), clamp(y, -worldHalf, worldHalf)];
 };
 
-module.exports = {
-  distance: distance,
-  clamp: clamp,
-  degToRad: degToRad,
-  radToDeg: radToDeg,
-  mapPointFromLngLat: mapPointFromLngLat
-}
+export { distance, clamp, degToRad, radToDeg, mapPointFromLngLat };
+
+// module.exports = {
+//   distance: distance,
+//   clamp: clamp,
+//   degToRad: degToRad,
+//   radToDeg: radToDeg,
+//   mapPointFromLngLat: mapPointFromLngLat
+// }

@@ -1,12 +1,12 @@
-var convertXml = require('xml-js');
-let mathUtils = require('./math.js');
+import * as convertXml from 'xml-js';
+import {  distance, radToDeg, mapPointFromLngLat } from './math.js';
 
 function transform(xml) {
   let result = convertXml.xml2js(xml, {compact: true});
   let lngLat = [result.buildings.building._attributes.lon, result.buildings.building._attributes.lat];
   let dirLngLat = [result.buildings.building._attributes.direction_lon, result.buildings.building._attributes.direction_lat];
-  let lngLatMP = mathUtils.mapPointFromLngLat(lngLat);
-  let dirLngLatMP = mathUtils.mapPointFromLngLat(dirLngLat);
+  let lngLatMP = mapPointFromLngLat(lngLat);
+  let dirLngLatMP = mapPointFromLngLat(dirLngLat);
 
   let BC = dirLngLatMP[1] - lngLatMP[1];
   let AC = dirLngLatMP[0] - lngLatMP[0];
@@ -18,8 +18,8 @@ function transform(xml) {
       let obj = {
         coordinates: [parseFloat(lngLat[0]), parseFloat(lngLat[1])],
         rotateX: 90,
-        rotateY: mathUtils.radToDeg(alphaRad),
-        scale: mathUtils.distance(lngLatMP, dirLngLatMP),
+        rotateY: radToDeg(alphaRad),
+        scale: distance(lngLatMP, dirLngLatMP),
         modelId: result.buildings.building.part[i]._attributes.id,
         modelUrl: result.buildings.building.part[i]._attributes.model
       };
@@ -29,6 +29,4 @@ function transform(xml) {
   return content;
 }
 
-module.exports = {
-  transform: transform
-};
+export { transform };

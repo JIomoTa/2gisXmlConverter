@@ -1,10 +1,10 @@
-let transform = require('./transform.js');
-let test = require('./test.js');
+import { transform } from './transform.js';
+import { unitTest } from './test.js';
 
 let button = document.getElementById('convert');
 button.addEventListener('click', function () {
     let xml = document.getElementById('inputXML').value;
-    let jsonObj = transform.transform(xml);
+    let jsonObj = transform(xml);
     document.getElementById('json').value = JSON.stringify(jsonObj, null, 2);  
 });
 
@@ -16,4 +16,4 @@ copyButton.addEventListener('click', function() {
     alert("Результат сохранен в буфер обмена");
 });
 
-test.unitTest();
+unitTest();
