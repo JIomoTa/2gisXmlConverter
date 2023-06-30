@@ -22,46 +22,38 @@
                 <div class="divXMLInput row">
                     <h3 class="XMLh3 p-3 user-select-none">Данные:</h3>
                     <div class="row flex-column">
-                        <div class="d-flex flex-row mb-2">
-                            <div class="col-auto me-4">
-                                <label for="inputLat" class="user-select-none col-sm-2 col-form-label">Lat:</label>
-                            </div>
-                            <div class="col-auto ms-2">
-                                <textarea id="inputLat" class="shadow-sm ms-5 form-control col-sm-2 px-4" rows="1"></textarea>
+                        <div class="mb-3 row">
+                            <label for="inputLat" class="col-sm-2 col-form-label">Lat:</label>
+                            <div class="col-sm-7">
+                                <input id="inputLat" class="shadow-sm ms-5 form-control col-sm-2 px-4"></input>
                             </div>
                         </div>
-                        <div class="d-flex flex-row mb-2">
-                            <div class="col-auto me-4">
-                                <label for="inputLon" class="user-select-none col-form-label">Lon:</label>
-                            </div>
-                            <div class="col-auto ms-1">
-                                <textarea id="inputLon" class="shadow-sm ms-5 form-control col-sm-2 px-4" rows="1"></textarea>
+                        <div class="mb-3 row">
+                            <label for="inputLon" class="col-sm-2 col-form-label">Lon:</label>
+                            <div class="col-sm-7">
+                                <input id="inputLon" class="shadow-sm ms-5 form-control col-sm-2 px-4"></input>
                             </div>
                         </div>
-                        <div class="d-flex flex-row mb-2">    
-                            <div class="col-auto">
-                                <label for="inputDirLat" class="user-select-none col-form-label">Direction_Lat:</label>
-                            </div>
-                            <div class="col-auto ms-2">
-                                <textarea id="inputDirLat" class="shadow-sm form-control col-sm-2 px-5" rows="1"></textarea>
+                        <div class="mb-3 row">    
+                            <label for="inputDirLat" class="col-sm-2 col-form-label">Direction_Lat:</label>
+                            <div class="col-sm-7">
+                                <input id="inputDirLat" class="shadow-sm ms-5 form-control col-sm-2 px-4"></input>
                             </div>
                         </div>
-                        <div class="d-flex flex-row mb-2">
-                            <div class="col-auto">
-                                <label for="inputDirLon" class="user-select-none col-form-label">Direction_Lon:</label>
-                            </div>
-                            <div class="col-auto ms-1">
-                                <textarea id="inputDirLon" class="shadow-sm form-control col-sm-2 px-5" rows="1"></textarea>
+                        <div class="mb-3 row">
+                            <label for="inputDirLon" class="col-sm-2 col-form-label">Direction_Lon:</label>
+                            <div class="col-sm-7">
+                                <input id="inputDirLon" class="shadow-sm ms-5 form-control col-sm-2 px-4"></input>
                             </div>
                         </div>
                     </div>
                 </div>
-                    <button id="convertData" class="m-5 p-2 col-3 align-self-center btn btn-primary btn-lg" type="button">Конвертировать</button>
+                    <button id="convertData" class="btn btn-primary mt-2" type="button">Конвертировать</button>
                 </div>
-                <div class="divJSON d-flex flex-column mb-3">
+                <div class="divJSON d-flex flex-column mb-3 mt-4">
                     <h3 class="JSONh3 p-2">JSON:</h3>
                     <textarea id="json" class="shadow-sm form-control p-5 rounded" rows="5" readonly></textarea>
-                    <button id="copyResult" class="m-3 p-2 col-4 align-self-center btn btn-primary btn-lg" type="button">Копировать результат</button>
+                    <button id="copyResult" class="btn btn-primary mt-4" type="button">Копировать результат</button>
                 </div>
             </div>
         </div>
