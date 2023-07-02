@@ -1,5 +1,4 @@
 import { transformFromXml, transformFromFields } from './transform.js';
-import { unitTestXml, unitTestFields } from './test.js';
 
 let btnConvertPage1 = document.getElementById('convert');
 let btnConvertPage2 = document.getElementById('convertData');
@@ -30,6 +29,3 @@ copyButton.addEventListener('click', function() {
     document.execCommand("copy");
     alert("Результат сохранен в буфер обмена");
 });
-
-unitTestXml();
-unitTestFields();
