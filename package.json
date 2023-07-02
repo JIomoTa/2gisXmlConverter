@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/JIomoTa/2gisXmlConverter#readme",
   "devDependencies": {
+    "jest": "^29.5.0",
     "webpack": "^5.88.0",
     "webpack-cli": "^5.1.4"
   },
